@@ -311,4 +311,4 @@ Validation errors may contain additional information depending on the type of va
 * JWT authentication protects all task endpoints.
 * Every task operation is scoped to the authenticated user's `userId`.
 * Users cannot access, update, or delete another user's tasks by guessing a task ID.
-* Invalid MongoDB IDs and validation errors are handled by centralized error-handling middleware.
+* Invalid MongoDB IDs and validation errors are handled by centralized error-handling middlewares.
