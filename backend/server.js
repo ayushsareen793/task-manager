@@ -28,16 +28,6 @@ app.use(
 );
 app.use(express.json());
 
-// When running as a Vercel Service behind the /api/backend routePrefix,
-// requests arrive with that prefix still attached. Strip it here so the
-// same route definitions work locally, on Render, and on Vercel.
-app.use((req, res, next) => {
-  if (req.url.startsWith("/api/backend")) {
-    req.url = req.url.replace("/api/backend", "") || "/";
-  }
-  next();
-});
-
 app.get("/", (req, res) => res.json({ message: "Task Manager API is running" }));
 
 app.use("/api/auth", authRoutes);
